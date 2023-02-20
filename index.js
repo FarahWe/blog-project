@@ -5,7 +5,13 @@ const app = express();
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-  res.render("index");
+  var name = "Eduardo Farah";
+  var lang = "JavaScript";
+
+  res.render("index", {
+    name,
+    lang,
+  });
 });
 
 app.listen(8080, () => {
