@@ -3,15 +3,10 @@ const app = express();
 
 // set express to use EJS
 app.set("view engine", "ejs");
+app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  var name = "Eduardo Farah";
-  var lang = "JavaScript";
-
-  res.render("index", {
-    name,
-    lang,
-  });
+  res.render("index");
 });
 
 app.listen(8080, () => {
